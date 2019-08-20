@@ -1,13 +1,14 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
+const path = require('path');
 
 module.exports = function(ctx) {
   return {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
-    boot: ['spa.js'],
+    boot: ['axios'],
 
-    css: ['app.styl'],
+    css: [''],
 
     extras: [
       // 'ionicons-v4',
@@ -30,6 +31,7 @@ module.exports = function(ctx) {
       components: [
         'QLayout',
         'QHeader',
+        'QFooter',
         'QDrawer',
         'QPageContainer',
         'QPage',
@@ -40,7 +42,11 @@ module.exports = function(ctx) {
         'QList',
         'QItem',
         'QItemSection',
-        'QItemLabel'
+        'QItemLabel',
+        'QAvatar',
+        'QTabs',
+        'QTab',
+        'QRouteTab'
       ],
 
       directives: ['Ripple'],
@@ -68,6 +74,18 @@ module.exports = function(ctx) {
             formatter: require('eslint').CLIEngine.getFormatter('stylish')
           }
         });
+        cfg.module.rules.push({
+          test: /\.scss$/,
+          use: [
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                sourceMap: true,
+                resources: [path.resolve(__dirname, 'src/css/global.scss')]
+              }
+            }
+          ]
+        });
       }
     },
 
@@ -88,8 +106,8 @@ module.exports = function(ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'Quasar App',
-        // short_name: 'Quasar App',
+        // name: 'shopping-prod',
+        // short_name: 'shopping-prod',
         // description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',

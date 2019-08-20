@@ -2,7 +2,7 @@
   "name": "shopping",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "productName": "shopping-prod",
   "cordovaId": "org.cordova.quasar.app",
   "author": "",
   "private": true,
@@ -12,17 +12,22 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "axios": "^0.18.1",
     "quasar": "^1.0.0"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
     "@vue/eslint-config-prettier": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "css-loader": "^3.2.0",
     "eslint": "^5.10.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.3.1"
+    "path": "^0.12.7",
+    "sass": "^1.22.10",
+    "sass-loader": "^7.3.1",
+    "sass-resources-loader": "^2.0.1",
+    "vue-style-loader": "^4.1.2"
   },
   "engines": {
     "node": ">= 8.9.0",

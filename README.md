@@ -1,4 +1,4 @@
-# Quasar App (shopping)
+# shopping-prod (shopping)
 
 A Quasar Framework app
 
