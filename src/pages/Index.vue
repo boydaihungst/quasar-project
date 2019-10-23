@@ -1,5 +1,6 @@
 <template>
   <q-page class="flex flex-center">
+    ahihi
   </q-page>
 </template>
 

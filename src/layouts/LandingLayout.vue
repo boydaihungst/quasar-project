@@ -25,6 +25,7 @@
       <q-tabs align="left">
         <q-route-tab
           to="/page1"
+          v-go-back=" '/' "
           label="Page One"
         />
         <q-route-tab
@@ -84,7 +85,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .abc {
-    background: $test;
-  }
+.abc {
+  background: $test;
+}
 </style>

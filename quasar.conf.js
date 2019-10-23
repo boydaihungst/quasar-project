@@ -1,7 +1,7 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 const path = require('path');
-
+const envParser = require('./src/environments/envParser');
 module.exports = function(ctx) {
   return {
     // app boot file (/src/boot)
@@ -49,10 +49,10 @@ module.exports = function(ctx) {
         'QRouteTab'
       ],
 
-      directives: ['Ripple'],
+      directives: ['Ripple','GoBack'],
 
       // Quasar plugins
-      plugins: ['Notify']
+      plugins: ['Notify', 'LocalStorage', 'SessionStorage','LoadingBar']
     },
 
     supportIE: false,
@@ -61,7 +61,10 @@ module.exports = function(ctx) {
       scopeHoisting: true,
       vueRouterMode: 'history',
       // vueCompiler: true,
+      showProgress: true,
       gzip: true,
+      minify: true,
+      env: envParser(),
       // analyze: true,
       // extractCSS: false,
       extendWebpack(cfg) {
